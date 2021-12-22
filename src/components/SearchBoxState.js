@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 
 export default function SearchBox(props) {
-  const [stateName, setstateName] = useState("All");
+  const [stateName, setstateName] =  useState({
+    state :"All",
+    service: "All"
+  });
 
   function handleChange(event) {
     console.log(event.target.value + "this is event value");
-    setstateName(event.target.value);
+    const {name, value} = event.target
+    setstateName(
+      (prev)=>{
+        return{
+          ...prev,
+          [name] :value
+        }
+      }
+    );
   }
   function handleClick() {
     console.log(stateName + " state 7777777777777");
@@ -15,12 +26,12 @@ export default function SearchBox(props) {
   return (
     <div className="searchBoxStyle">
     <div className="serch-items">
-    <h5>Search by State</h5>
+    <h4>Search by State</h4>
       <select
         class="form-select"
         onChange={handleChange}
         aria-label="Default select example"
-        name="profession"
+        name="state"
       >
         <option selected>All</option>
         <option value="Uttar Pradesh">Uttar Pradesh</option>
@@ -31,12 +42,12 @@ export default function SearchBox(props) {
       </select>
 </div>
 <div className="serch-items">
-      <h5>Search by Facility</h5>
+      <h4>Search by Facility</h4>
       <select
         class="form-select"
-       
+       onChange={handleChange}
         aria-label="Default select example"
-        name="profession"
+        name="service"
       >
         <option selected>All</option>
         <option value="Community Health Center">Community Health Center</option>

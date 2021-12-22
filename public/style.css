@@ -47,13 +47,13 @@ body{
   div.content {
     margin-left: 200px;
     padding: 1px 16px;
-    height: 1000px;
+    height: 100%;
   }
   
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
     .sidebar {
-      width: 100%;
+      width: auto;
       height: auto;
       position: relative;
     }
@@ -87,3 +87,210 @@ body{
       height: 30px;
     
   }
+
+
+
+  /* -------------------- */
+
+  @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
+@import url(fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin);
+@import url(https://fonts.googleapis.com/css?family=Tangerine);
+
+/*navigation bar*/
+
+.navbar {
+	margin-bottom: 0;
+	background-color: rgba(0, 0, 0, 0.84);
+	font-size: 12px;
+	letter-spacing: 6px;
+	font-family: Montserrat, sans-serif;
+}
+
+
+/* background */
+
+
+/* Container background/styles */
+
+.tp-background {
+	background-color: rgba(0, 0, 0, 0.54);
+	color: inherit;
+}
+
+.tp-background2 {
+	background-color: rgba(0, 0, 0, 0.54);
+	color: inherit;
+	height: 90vh;
+}
+
+.bg1 {
+	background-color: white;
+}
+
+.bg2 {
+	background-color: grey;
+}
+
+.bg3 {
+	background-color: #f4f1f0;
+}
+
+.bg4 {
+	background-color: #ff8000;
+}
+
+.bg5 {
+	background-color: rgba(0, 0, 0, 0.84);
+}
+
+
+/* container padding*/
+
+.head-pad {
+	padding-top: 150px;
+	padding-bottom: 440px;
+}
+
+.pad-1 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.pad-2 {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.pad-bottom {
+	padding-bottom: 50px;
+}
+
+.pad-top {
+	padding-top: 50px;
+}
+
+.pad-double {
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+.pad-bottom-sm {
+	padding-bottom: 10px;
+}
+
+.foot-pad {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/* horizontal line */
+
+.line-separator {
+	height: 2px;
+	background: #717171;
+	border-bottom: 1px solid #313030;
+}
+
+
+/* Content vertical & horizontal alignment*/
+
+.vertical-align {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/*fonts*/
+
+h1 {
+	font-size: 50px;
+	color: white;
+	font-weight: lighter;
+}
+
+h2 {
+	font-size: 47px;
+	font-family: Tangerine, Ubuntu;
+	color: white;
+	font-weight: lighter;
+}
+
+h3 {
+	font-size: 16px;
+	color: black;
+	font-family: Ubuntu;
+
+}
+
+h4 {
+	font-size: 22px;
+	color: black;
+	font-family: Ubuntu;
+	font-weight: lighter;
+}
+
+h5 {
+	font-size: 32px;
+	color: #ff8000;
+	font-family: Ubuntu;
+	font-weight: bolder;
+	letter-spacing: 3px;
+}
+
+h6 {
+	font-size: 18px;
+	color: black;
+	font-family: Ubuntu;
+	font-weight: lighter;
+}
+
+h7 {
+	font-size: 30px;
+	color: white;
+	font-weight: lighter;
+}
+
+h8 {
+	font-size: 30px;
+	font-family: Tangerine, Ubuntu;
+	color: white;
+	font-weight: lighter;
+}
+
+h9 {
+	font-size: 12px;
+	color: white;
+
+}
+
+a {
+	color: black;
+}
+
+h4 .card-title{
+  font-size: 22px;
+  text-decoration-color: rgb(227,82,82);
+  background: #ffffff;
+}
+p .ard-text{
+  font-style: italic;
+}
+
+.about-container{
+  margin:100px;
+  margin-bottom: 100px;
+  align-content: center;
+}
+.about-container p{
+  text-align: center;
+}
+.about-container h4{
+  text-align: center;
+}
+.about-container-div{
+  margin:100px;
+  margin-bottom: 100px;
+}

@@ -12,6 +12,8 @@ export default function Osm() {
 
   let [state, setstate] = useState("");
 
+  let  [serv, setserv] = useState({})
+
   let [filterData, setfilterData] = useState(data);
   
   let [radiusValue , setradiusValue] = useState(100);
@@ -21,23 +23,46 @@ export default function Osm() {
 
   function setState(st) {
     setfilterData(data);
-    setstate(st);
-    console.log("State input is = " + state);
-    filterData = [];
+    console.log("this is the obhe==")
+    console.log(st);
+    setstate(st.state);
+    setserv(st.service);
+    console.log("State input is = " + state + serv);
+    // filterData = [];
 
-    if (state === "All") {
-      state = null;
-    }
-
-    if (state) {
-      console.log("falu");
+   
+    if (state !== "All" && serv !=="All") {
+     
 
       setfilterData((prevData) => {
         return prevData.filter((currUrser, index) => {
-          return currUrser.State_Name === state;
+          return (currUrser.State_Name === state && currUrser.Facility_Type === serv) ;
         });
       });
     }
+     
+    else if (state !== "All") {
+     
+
+      setfilterData((prevData) => {
+        return prevData.filter((currUrser, index) => {
+          return (currUrser.State_Name === state ) ;
+        });
+      });
+    }
+    else if (serv !== "All") {
+ 
+
+      setfilterData((prevData) => {
+        return prevData.filter((currUrser, index) => {
+          return (currUrser.Facility_Type === serv ) ;
+        });
+      });
+    }
+    else{
+      setfilterData(data);
+    }
+
   }
 
   console.log(data[0]);
@@ -98,6 +123,20 @@ export default function Osm() {
     });
 
   }
+  function getLatLong(latLong){
+    console.log(latLong);
+    setfilterData(data);
+    setfilterData((prevData) => {
+      return prevData.filter((currUrser, index) => {
+
+        
+        let getRadius = distance(currUrser.latitude, latLong.latitude, currUrser.longitude, latLong.longitude);
+        // console.log(getRadius + " radius");
+        // console.log(latLong.radius >= getRadius)
+        return latLong.radius >= getRadius;
+      });
+    });
+  }
 
 
 	function distance(lat1, lat2, lon1, lon2)
@@ -136,9 +175,11 @@ setradiusValue(event.target.value);
   return (
     <div>
       <SearchBoxState getState={setState} />
-      <h5>Enter Coordinate details to Find Health Facilities </h5>
-      <DataInRadius/>
-      <h5>Get Health Facilities According to your current location</h5>
+      <h4>Enter Coordinate details to Find Health Facilities </h4>
+      <DataInRadius
+        sendLatLong = {getLatLong}
+      />
+      <h4>Get Health Facilities from your current location</h4>
       <h6>Enter Radius in Km</h6>
       <input onChange={handleRadiusChange} value={radiusValue}></input>
       <button onClick={getDataUnderRadi} >Find</button>
@@ -160,7 +201,7 @@ setradiusValue(event.target.value);
           >
             <Popup position={[serviceData.latitude, serviceData.longitude]}>
               <div>
-                <h2>{serviceData.Health_Facility_Name}</h2>
+                <h2 style={{color:"green"}}>{serviceData.Facility_Type}</h2>
                 <h4>{serviceData.State_Name}</h4>
                 <h4>{serviceData.pincode}</h4>
                 <h4>{serviceData.Taluka_Name}</h4>

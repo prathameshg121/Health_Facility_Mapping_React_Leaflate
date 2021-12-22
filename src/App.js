@@ -8,19 +8,8 @@ function App() {
 
 
   return (
-//     <Router>
-// <Route path="/">
-// <Home/>
-// </Route>
-// <Route path="/container">
-// <Container/>
-// </Route>
-// </Router>
+
 <Container/>
-
-
-
-
 
   
   );
