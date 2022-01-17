@@ -8,7 +8,7 @@ export default function Home(){
         <div>
 
 <div id="about" class="container-fluid bg1">
-	<h3>About Helth Services↓</h3>
+	<h3>About Health Services↓</h3>
 	<div class="container-fluid line-separator"></div>
 
 	<div class="row col-md-10 col-md-offset-1 text-center pad-top">
