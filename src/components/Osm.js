@@ -202,15 +202,16 @@ setradiusValue(event.target.value);
             <Popup position={[serviceData.latitude, serviceData.longitude]}>
               <div>
                 <h2 style={{color:"green"}}>{serviceData.Facility_Type}</h2>
-                <h4>{serviceData.State_Name}</h4>
-                <h4>{serviceData.pincode}</h4>
-                <h4>{serviceData.Taluka_Name}</h4>
-                <h4>{serviceData.Health_Facility_Name}</h4>
-                <h4>{serviceData.District_Name}</h4>
-                <h4>{serviceData.Block_Name}</h4>
-                <h4>{serviceData.Address}</h4>
-                <h4>{serviceData.latitude}</h4>
-                <h4>{serviceData.longitude}</h4>
+                <h4>State     : {serviceData.State_Name}</h4>
+                <h4>PinCode   :{serviceData.pincode}</h4>
+                <h4>Taluka    :{serviceData.Taluka_Name}</h4>
+                <h4>Facility  :{serviceData.Health_Facility_Name}</h4>
+                <h4>District  :{serviceData.District_Name}</h4>
+                <h4>Block &ensp &ensp    :{serviceData.Block_Name}</h4>
+                <h4>Address   :{serviceData.Address}</h4>
+                <h4>Latitude  :{serviceData.latitude}</h4>
+                <h4>Longitude :{serviceData.longitude}</h4>
+                <h4>shivam      pawar</h4><t></t>
               </div>
             </Popup>
           </Marker>
